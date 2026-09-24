@@ -1,0 +1,13 @@
+*.log
+.vscode/
+.cache/
+__pycache__/
+
+2026_09_23.pdf
+Actividad 5.md
+Actividad_5_Mauricio.zip
+
+dvdrental.tar
+backup_dvdrental.sh
+backups/
+pss.txt

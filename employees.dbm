@@ -1,0 +1,1912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="1.2.3" use-changelog="false" max-obj-count="52"
+	 gen-disabled-objs-code="false" show-sys-schemas-rects="true"
+	 last-position="0,0" last-zoom="0.6" scene-rect="0,-7,2783.46,1139.52"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<role name="mauricio"
+ superuser="true"
+ createdb="true"
+ replication="true"
+ createrole="true"
+ inherit="true"
+ login="true"
+ bypassrls="true"
+ password="********"
+ sql-disabled="true">
+</role>
+
+<database name="employees" encoding="UTF8" lc-collate="en_US.utf8" lc-ctype="en_US.utf8" is-template="false" allow-conns="true">
+	<role name="mauricio"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" layers="0" rect-visible="true" fill-color="#e1e1e1" name-color="#000000" sql-disabled="true">
+</schema>
+
+<schema name="employees" layers="0" rect-visible="true" fill-color="#3e76d6" name-color="#000000">
+	<role name="mauricio"/>
+</schema>
+
+<table name="departments" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="employees"/>
+	<role name="mauricio"/>
+	<position x="680" y="120"/>
+	<column name="dept_no" not-null="true">
+		<type name="character" length="4"/>
+		<collation name="pg_catalog.&quot;default&quot;"/>
+	</column>
+	<column name="dept_name" not-null="true">
+		<type name="character varying" length="40"/>
+		<collation name="pg_catalog.&quot;default&quot;"/>
+	</column>
+	<constraint name="idx_16884_primary" type="pk-constr" table="employees.departments">
+		<columns names="dept_no" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dept_emp" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="employees"/>
+	<role name="mauricio"/>
+	<position x="740" y="480"/>
+	<column name="emp_no" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="dept_no" not-null="true">
+		<type name="character" length="4"/>
+		<collation name="pg_catalog.&quot;default&quot;"/>
+	</column>
+	<column name="from_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="to_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="idx_16889_primary" type="pk-constr" table="employees.dept_emp">
+		<columns names="emp_no,dept_no" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dept_manager" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="employees"/>
+	<role name="mauricio"/>
+	<position x="1360" y="120"/>
+	<column name="emp_no" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="dept_no" not-null="true">
+		<type name="character" length="4"/>
+		<collation name="pg_catalog.&quot;default&quot;"/>
+	</column>
+	<column name="from_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="to_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="idx_16896_primary" type="pk-constr" table="employees.dept_manager">
+		<columns names="emp_no,dept_no" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="employees" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="employees"/>
+	<role name="mauricio"/>
+	<position x="1500" y="620"/>
+	<column name="emp_no" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="birth_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="first_name" not-null="true">
+		<type name="character varying" length="14"/>
+		<collation name="pg_catalog.&quot;default&quot;"/>
+	</column>
+	<column name="last_name" not-null="true">
+		<type name="character varying" length="16"/>
+		<collation name="pg_catalog.&quot;default&quot;"/>
+	</column>
+	<column name="gender" not-null="true">
+		<type name="text" length="0"/>
+		<collation name="pg_catalog.&quot;default&quot;"/>
+	</column>
+	<column name="hire_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="idx_16903_primary" type="pk-constr" table="employees.employees">
+		<columns names="emp_no" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="salaries" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="employees"/>
+	<role name="mauricio"/>
+	<position x="1980" y="360"/>
+	<column name="emp_no" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="salary" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="from_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="to_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="idx_16914_primary" type="pk-constr" table="employees.salaries">
+		<columns names="emp_no,from_date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="titles" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="employees"/>
+	<role name="mauricio"/>
+	<position x="480" y="880"/>
+	<column name="emp_no" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="title" not-null="true">
+		<type name="character varying" length="50"/>
+		<collation name="pg_catalog.&quot;default&quot;"/>
+	</column>
+	<column name="from_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="to_date">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="idx_16921_primary" type="pk-constr" table="employees.titles">
+		<columns names="emp_no,title,from_date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<function name="bttextcmp" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less-equal-greater]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="integer" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="text" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="text" length="0"/>
+	</parameter>
+	<definition> <![CDATA[bttextcmp]]> </definition>
+</function>
+
+<function name="bttextsortsupport" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[sort support]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="void" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<definition> <![CDATA[bttextsortsupport]]> </definition>
+</function>
+
+<function name="btvarstrequalimage" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[equal image]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="oid" length="0"/>
+	</parameter>
+	<definition> <![CDATA[btvarstrequalimage]]> </definition>
+</function>
+
+<function name="btnamecmp" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less-equal-greater]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="integer" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="name" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="name" length="0"/>
+	</parameter>
+	<definition> <![CDATA[btnamecmp]]> </definition>
+</function>
+
+<function name="btnamesortsupport" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[sort support]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="void" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<definition> <![CDATA[btnamesortsupport]]> </definition>
+</function>
+
+<function name="btnametextcmp" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less-equal-greater]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="integer" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="name" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="text" length="0"/>
+	</parameter>
+	<definition> <![CDATA[btnametextcmp]]> </definition>
+</function>
+
+<function name="bttextnamecmp" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less-equal-greater]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="integer" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="text" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="name" length="0"/>
+	</parameter>
+	<definition> <![CDATA[bttextnamecmp]]> </definition>
+</function>
+
+<function name="text_lt" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of < operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="text" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="text" length="0"/>
+	</parameter>
+	<definition> <![CDATA[text_lt]]> </definition>
+</function>
+
+<function name="scalarltsel" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="STABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[restriction selectivity of < and related operators on scalar datatypes]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="double precision" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="oid" length="0"/>
+	</parameter>
+	<parameter name="_param3">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param4">
+		<type name="integer" length="0"/>
+	</parameter>
+	<definition> <![CDATA[scalarltsel]]> </definition>
+</function>
+
+<function name="scalarltjoinsel" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="STABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[join selectivity of < and related operators on scalar datatypes]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="double precision" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="oid" length="0"/>
+	</parameter>
+	<parameter name="_param3">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param4">
+		<type name="smallint" length="0"/>
+	</parameter>
+	<parameter name="_param5">
+		<type name="internal" length="0"/>
+	</parameter>
+	<definition> <![CDATA[scalarltjoinsel]]> </definition>
+</function>
+
+<operator name="&lt;" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less than]]> </comment>
+	<type name="text" length="0" ref-type="left-type"/>
+	<type name="text" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.text_lt(text,text)"/>
+	<function ref-type="join" signature="pg_catalog.scalarltjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalarltsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="text_le" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of <= operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="text" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="text" length="0"/>
+	</parameter>
+	<definition> <![CDATA[text_le]]> </definition>
+</function>
+
+<function name="scalarlesel" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="STABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[restriction selectivity of <= and related operators on scalar datatypes]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="double precision" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="oid" length="0"/>
+	</parameter>
+	<parameter name="_param3">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param4">
+		<type name="integer" length="0"/>
+	</parameter>
+	<definition> <![CDATA[scalarlesel]]> </definition>
+</function>
+
+<function name="scalarlejoinsel" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="STABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[join selectivity of <= and related operators on scalar datatypes]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="double precision" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="oid" length="0"/>
+	</parameter>
+	<parameter name="_param3">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param4">
+		<type name="smallint" length="0"/>
+	</parameter>
+	<parameter name="_param5">
+		<type name="internal" length="0"/>
+	</parameter>
+	<definition> <![CDATA[scalarlejoinsel]]> </definition>
+</function>
+
+<operator name="&lt;=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less than or equal]]> </comment>
+	<type name="text" length="0" ref-type="left-type"/>
+	<type name="text" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.text_le(text,text)"/>
+	<function ref-type="join" signature="pg_catalog.scalarlejoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalarlesel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="texteq" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of = operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="text" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="text" length="0"/>
+	</parameter>
+	<definition> <![CDATA[texteq]]> </definition>
+</function>
+
+<function name="eqsel" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="STABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[restriction selectivity of = and related operators]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="double precision" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="oid" length="0"/>
+	</parameter>
+	<parameter name="_param3">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param4">
+		<type name="integer" length="0"/>
+	</parameter>
+	<definition> <![CDATA[eqsel]]> </definition>
+</function>
+
+<function name="eqjoinsel" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="STABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[join selectivity of = and related operators]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="double precision" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="oid" length="0"/>
+	</parameter>
+	<parameter name="_param3">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param4">
+		<type name="smallint" length="0"/>
+	</parameter>
+	<parameter name="_param5">
+		<type name="internal" length="0"/>
+	</parameter>
+	<definition> <![CDATA[eqjoinsel]]> </definition>
+</function>
+
+<operator name="=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[equal]]> </comment>
+	<type name="text" length="0" ref-type="left-type"/>
+	<type name="text" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.texteq(text,text)"/>
+	<function ref-type="join" signature="pg_catalog.eqjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.eqsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="text_ge" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of >= operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="text" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="text" length="0"/>
+	</parameter>
+	<definition> <![CDATA[text_ge]]> </definition>
+</function>
+
+<function name="scalargesel" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="STABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[restriction selectivity of >= and related operators on scalar datatypes]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="double precision" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="oid" length="0"/>
+	</parameter>
+	<parameter name="_param3">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param4">
+		<type name="integer" length="0"/>
+	</parameter>
+	<definition> <![CDATA[scalargesel]]> </definition>
+</function>
+
+<function name="scalargejoinsel" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="STABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[join selectivity of >= and related operators on scalar datatypes]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="double precision" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="oid" length="0"/>
+	</parameter>
+	<parameter name="_param3">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param4">
+		<type name="smallint" length="0"/>
+	</parameter>
+	<parameter name="_param5">
+		<type name="internal" length="0"/>
+	</parameter>
+	<definition> <![CDATA[scalargejoinsel]]> </definition>
+</function>
+
+<operator name="&gt;=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[greater than or equal]]> </comment>
+	<type name="text" length="0" ref-type="left-type"/>
+	<type name="text" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.text_ge(text,text)"/>
+	<function ref-type="join" signature="pg_catalog.scalargejoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalargesel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="text_gt" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of > operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="text" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="text" length="0"/>
+	</parameter>
+	<definition> <![CDATA[text_gt]]> </definition>
+</function>
+
+<function name="scalargtsel" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="STABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[restriction selectivity of > and related operators on scalar datatypes]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="double precision" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="oid" length="0"/>
+	</parameter>
+	<parameter name="_param3">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param4">
+		<type name="integer" length="0"/>
+	</parameter>
+	<definition> <![CDATA[scalargtsel]]> </definition>
+</function>
+
+<function name="scalargtjoinsel" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="STABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[join selectivity of > and related operators on scalar datatypes]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="double precision" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="oid" length="0"/>
+	</parameter>
+	<parameter name="_param3">
+		<type name="internal" length="0"/>
+	</parameter>
+	<parameter name="_param4">
+		<type name="smallint" length="0"/>
+	</parameter>
+	<parameter name="_param5">
+		<type name="internal" length="0"/>
+	</parameter>
+	<definition> <![CDATA[scalargtjoinsel]]> </definition>
+</function>
+
+<operator name="&gt;" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[greater than]]> </comment>
+	<type name="text" length="0" ref-type="left-type"/>
+	<type name="text" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.text_gt(text,text)"/>
+	<function ref-type="join" signature="pg_catalog.scalargtjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalargtsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="namelt" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of < operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="name" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="name" length="0"/>
+	</parameter>
+	<definition> <![CDATA[namelt]]> </definition>
+</function>
+
+<operator name="&lt;" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less than]]> </comment>
+	<type name="name" length="0" ref-type="left-type"/>
+	<type name="name" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.namelt(name,name)"/>
+	<function ref-type="join" signature="pg_catalog.scalarltjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalarltsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="namele" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of <= operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="name" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="name" length="0"/>
+	</parameter>
+	<definition> <![CDATA[namele]]> </definition>
+</function>
+
+<operator name="&lt;=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less than or equal]]> </comment>
+	<type name="name" length="0" ref-type="left-type"/>
+	<type name="name" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.namele(name,name)"/>
+	<function ref-type="join" signature="pg_catalog.scalarlejoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalarlesel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="nameeq" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of = operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="name" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="name" length="0"/>
+	</parameter>
+	<definition> <![CDATA[nameeq]]> </definition>
+</function>
+
+<operator name="=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[equal]]> </comment>
+	<type name="name" length="0" ref-type="left-type"/>
+	<type name="name" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.nameeq(name,name)"/>
+	<function ref-type="join" signature="pg_catalog.eqjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.eqsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="namege" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of >= operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="name" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="name" length="0"/>
+	</parameter>
+	<definition> <![CDATA[namege]]> </definition>
+</function>
+
+<operator name="&gt;=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[greater than or equal]]> </comment>
+	<type name="name" length="0" ref-type="left-type"/>
+	<type name="name" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.namege(name,name)"/>
+	<function ref-type="join" signature="pg_catalog.scalargejoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalargesel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="namegt" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of > operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="name" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="name" length="0"/>
+	</parameter>
+	<definition> <![CDATA[namegt]]> </definition>
+</function>
+
+<operator name="&gt;" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[greater than]]> </comment>
+	<type name="name" length="0" ref-type="left-type"/>
+	<type name="name" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.namegt(name,name)"/>
+	<function ref-type="join" signature="pg_catalog.scalargtjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalargtsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="namelttext" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of < operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="name" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="text" length="0"/>
+	</parameter>
+	<definition> <![CDATA[namelttext]]> </definition>
+</function>
+
+<operator name="&lt;" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less than]]> </comment>
+	<type name="name" length="0" ref-type="left-type"/>
+	<type name="text" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.namelttext(name,text)"/>
+	<function ref-type="join" signature="pg_catalog.scalarltjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalarltsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="nameletext" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of <= operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="name" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="text" length="0"/>
+	</parameter>
+	<definition> <![CDATA[nameletext]]> </definition>
+</function>
+
+<operator name="&lt;=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less than or equal]]> </comment>
+	<type name="name" length="0" ref-type="left-type"/>
+	<type name="text" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.nameletext(name,text)"/>
+	<function ref-type="join" signature="pg_catalog.scalarlejoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalarlesel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="nameeqtext" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of = operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="name" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="text" length="0"/>
+	</parameter>
+	<definition> <![CDATA[nameeqtext]]> </definition>
+</function>
+
+<operator name="=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[equal]]> </comment>
+	<type name="name" length="0" ref-type="left-type"/>
+	<type name="text" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.nameeqtext(name,text)"/>
+	<function ref-type="join" signature="pg_catalog.eqjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.eqsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="namegetext" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of >= operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="name" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="text" length="0"/>
+	</parameter>
+	<definition> <![CDATA[namegetext]]> </definition>
+</function>
+
+<operator name="&gt;=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[greater than or equal]]> </comment>
+	<type name="name" length="0" ref-type="left-type"/>
+	<type name="text" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.namegetext(name,text)"/>
+	<function ref-type="join" signature="pg_catalog.scalargejoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalargesel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="namegttext" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of > operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="name" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="text" length="0"/>
+	</parameter>
+	<definition> <![CDATA[namegttext]]> </definition>
+</function>
+
+<operator name="&gt;" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[greater than]]> </comment>
+	<type name="name" length="0" ref-type="left-type"/>
+	<type name="text" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.namegttext(name,text)"/>
+	<function ref-type="join" signature="pg_catalog.scalargtjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalargtsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="textltname" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of < operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="text" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="name" length="0"/>
+	</parameter>
+	<definition> <![CDATA[textltname]]> </definition>
+</function>
+
+<operator name="&lt;" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less than]]> </comment>
+	<type name="text" length="0" ref-type="left-type"/>
+	<type name="name" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.textltname(text,name)"/>
+	<function ref-type="join" signature="pg_catalog.scalarltjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalarltsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="textlename" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of <= operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="text" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="name" length="0"/>
+	</parameter>
+	<definition> <![CDATA[textlename]]> </definition>
+</function>
+
+<operator name="&lt;=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less than or equal]]> </comment>
+	<type name="text" length="0" ref-type="left-type"/>
+	<type name="name" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.textlename(text,name)"/>
+	<function ref-type="join" signature="pg_catalog.scalarlejoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalarlesel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="texteqname" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of = operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="text" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="name" length="0"/>
+	</parameter>
+	<definition> <![CDATA[texteqname]]> </definition>
+</function>
+
+<operator name="=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[equal]]> </comment>
+	<type name="text" length="0" ref-type="left-type"/>
+	<type name="name" length="0" ref-type="right-type"/>
+	<operator  signature="pg_catalog.=(name,text)"/>
+	<function ref-type="operfunc" signature="pg_catalog.texteqname(text,name)"/>
+	<function ref-type="join" signature="pg_catalog.eqjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.eqsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="textgename" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of >= operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="text" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="name" length="0"/>
+	</parameter>
+	<definition> <![CDATA[textgename]]> </definition>
+</function>
+
+<operator name="&gt;=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[greater than or equal]]> </comment>
+	<type name="text" length="0" ref-type="left-type"/>
+	<type name="name" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.textgename(text,name)"/>
+	<function ref-type="join" signature="pg_catalog.scalargejoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalargesel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="textgtname" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of > operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="text" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="name" length="0"/>
+	</parameter>
+	<definition> <![CDATA[textgtname]]> </definition>
+</function>
+
+<operator name="&gt;" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[greater than]]> </comment>
+	<type name="text" length="0" ref-type="left-type"/>
+	<type name="name" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.textgtname(text,name)"/>
+	<function ref-type="join" signature="pg_catalog.scalargtjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalargtsel(internal,oid,internal,integer)"/>
+</operator>
+
+<opclass  name="text_ops" index-type="btree" default="true" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<type name="text" length="0"/>
+	<element type="function" stg-number="1">
+		<function signature="pg_catalog.bttextcmp(text,text)"/>
+	</element>
+	<element type="function" stg-number="2">
+		<function signature="pg_catalog.bttextsortsupport(internal)"/>
+	</element>
+	<element type="function" stg-number="4">
+		<function signature="pg_catalog.btvarstrequalimage(oid)"/>
+	</element>
+	<element type="function" stg-number="1">
+		<function signature="pg_catalog.btnamecmp(name,name)"/>
+	</element>
+	<element type="function" stg-number="2">
+		<function signature="pg_catalog.btnamesortsupport(internal)"/>
+	</element>
+	<element type="function" stg-number="4">
+		<function signature="pg_catalog.btvarstrequalimage(oid)"/>
+	</element>
+	<element type="function" stg-number="1">
+		<function signature="pg_catalog.btnametextcmp(name,text)"/>
+	</element>
+	<element type="function" stg-number="1">
+		<function signature="pg_catalog.bttextnamecmp(text,name)"/>
+	</element>
+	<element type="operator" stg-number="1">
+		<operator  signature="pg_catalog.&lt;(text,text)"/>
+	</element>
+	<element type="operator" stg-number="2">
+		<operator  signature="pg_catalog.&lt;=(text,text)"/>
+	</element>
+	<element type="operator" stg-number="3">
+		<operator  signature="pg_catalog.=(text,text)"/>
+	</element>
+	<element type="operator" stg-number="4">
+		<operator  signature="pg_catalog.&gt;=(text,text)"/>
+	</element>
+	<element type="operator" stg-number="5">
+		<operator  signature="pg_catalog.&gt;(text,text)"/>
+	</element>
+	<element type="operator" stg-number="1">
+		<operator  signature="pg_catalog.&lt;(name,name)"/>
+	</element>
+	<element type="operator" stg-number="2">
+		<operator  signature="pg_catalog.&lt;=(name,name)"/>
+	</element>
+	<element type="operator" stg-number="3">
+		<operator  signature="pg_catalog.=(name,name)"/>
+	</element>
+	<element type="operator" stg-number="4">
+		<operator  signature="pg_catalog.&gt;=(name,name)"/>
+	</element>
+	<element type="operator" stg-number="5">
+		<operator  signature="pg_catalog.&gt;(name,name)"/>
+	</element>
+	<element type="operator" stg-number="1">
+		<operator  signature="pg_catalog.&lt;(name,text)"/>
+	</element>
+	<element type="operator" stg-number="2">
+		<operator  signature="pg_catalog.&lt;=(name,text)"/>
+	</element>
+	<element type="operator" stg-number="3">
+		<operator  signature="pg_catalog.=(name,text)"/>
+	</element>
+	<element type="operator" stg-number="4">
+		<operator  signature="pg_catalog.&gt;=(name,text)"/>
+	</element>
+	<element type="operator" stg-number="5">
+		<operator  signature="pg_catalog.&gt;(name,text)"/>
+	</element>
+	<element type="operator" stg-number="1">
+		<operator  signature="pg_catalog.&lt;(text,name)"/>
+	</element>
+	<element type="operator" stg-number="2">
+		<operator  signature="pg_catalog.&lt;=(text,name)"/>
+	</element>
+	<element type="operator" stg-number="3">
+		<operator  signature="pg_catalog.=(text,name)"/>
+	</element>
+	<element type="operator" stg-number="4">
+		<operator  signature="pg_catalog.&gt;=(text,name)"/>
+	</element>
+	<element type="operator" stg-number="5">
+		<operator  signature="pg_catalog.&gt;(text,name)"/>
+	</element>
+</opclass>
+
+<index name="idx_16884_dept_name" table="employees.departments"
+	 concurrent="false" unique="true" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dept_name"/>
+			<opclass  signature="pg_catalog.text_ops USING btree"/>
+		</idxelement>
+</index>
+
+<function name="bpcharcmp" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less-equal-greater]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="integer" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="character" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="character" length="0"/>
+	</parameter>
+	<definition> <![CDATA[bpcharcmp]]> </definition>
+</function>
+
+<function name="bpchar_sortsupport" sql-disabled="true"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[sort support]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="void" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="internal" length="0"/>
+	</parameter>
+	<definition> <![CDATA[bpchar_sortsupport]]> </definition>
+</function>
+
+<function name="bpcharlt" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of < operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="character" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="character" length="0"/>
+	</parameter>
+	<definition> <![CDATA[bpcharlt]]> </definition>
+</function>
+
+<operator name="&lt;" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less than]]> </comment>
+	<type name="character" length="0" ref-type="left-type"/>
+	<type name="character" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.bpcharlt(character,character)"/>
+	<function ref-type="join" signature="pg_catalog.scalarltjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalarltsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="bpcharle" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of <= operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="character" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="character" length="0"/>
+	</parameter>
+	<definition> <![CDATA[bpcharle]]> </definition>
+</function>
+
+<operator name="&lt;=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[less than or equal]]> </comment>
+	<type name="character" length="0" ref-type="left-type"/>
+	<type name="character" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.bpcharle(character,character)"/>
+	<function ref-type="join" signature="pg_catalog.scalarlejoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalarlesel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="bpchareq" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of = operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="character" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="character" length="0"/>
+	</parameter>
+	<definition> <![CDATA[bpchareq]]> </definition>
+</function>
+
+<operator name="=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[equal]]> </comment>
+	<type name="character" length="0" ref-type="left-type"/>
+	<type name="character" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.bpchareq(character,character)"/>
+	<function ref-type="join" signature="pg_catalog.eqjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.eqsel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="bpcharge" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of >= operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="character" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="character" length="0"/>
+	</parameter>
+	<definition> <![CDATA[bpcharge]]> </definition>
+</function>
+
+<operator name="&gt;=" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[greater than or equal]]> </comment>
+	<type name="character" length="0" ref-type="left-type"/>
+	<type name="character" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.bpcharge(character,character)"/>
+	<function ref-type="join" signature="pg_catalog.scalargejoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalargesel(internal,oid,internal,integer)"/>
+</operator>
+
+<function name="bpchargt" sql-disabled="true"
+		window-func="false"
+		leakproof="true"
+		returns-setof="false"
+		behavior-type="RETURNS NULL ON NULL INPUT"
+		function-type="IMMUTABLE"
+		security-type="SECURITY INVOKER"
+		parallel-type="PARALLEL SAFE"
+		execution-cost="1"
+		row-amount="0">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[implementation of > operator]]> </comment>
+	<language name="internal"/>
+	<return-type>
+	<type name="boolean" length="0"/>
+	</return-type>
+	<parameter name="_param1">
+		<type name="character" length="0"/>
+	</parameter>
+	<parameter name="_param2">
+		<type name="character" length="0"/>
+	</parameter>
+	<definition> <![CDATA[bpchargt]]> </definition>
+</function>
+
+<operator name="&gt;" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<comment> <![CDATA[greater than]]> </comment>
+	<type name="character" length="0" ref-type="left-type"/>
+	<type name="character" length="0" ref-type="right-type"/>
+	<function ref-type="operfunc" signature="pg_catalog.bpchargt(character,character)"/>
+	<function ref-type="join" signature="pg_catalog.scalargtjoinsel(internal,oid,internal,smallint,internal)"/>
+	<function ref-type="restriction" signature="pg_catalog.scalargtsel(internal,oid,internal,integer)"/>
+</operator>
+
+<opclass  name="bpchar_ops" index-type="btree" default="true" sql-disabled="true">
+	<schema name="pg_catalog"/>
+	<role name="mauricio"/>
+	<type name="character" length="0"/>
+	<element type="function" stg-number="1">
+		<function signature="pg_catalog.bpcharcmp(character,character)"/>
+	</element>
+	<element type="function" stg-number="2">
+		<function signature="pg_catalog.bpchar_sortsupport(internal)"/>
+	</element>
+	<element type="function" stg-number="4">
+		<function signature="pg_catalog.btvarstrequalimage(oid)"/>
+	</element>
+	<element type="operator" stg-number="1">
+		<operator  signature="pg_catalog.&lt;(character,character)"/>
+	</element>
+	<element type="operator" stg-number="2">
+		<operator  signature="pg_catalog.&lt;=(character,character)"/>
+	</element>
+	<element type="operator" stg-number="3">
+		<operator  signature="pg_catalog.=(character,character)"/>
+	</element>
+	<element type="operator" stg-number="4">
+		<operator  signature="pg_catalog.&gt;=(character,character)"/>
+	</element>
+	<element type="operator" stg-number="5">
+		<operator  signature="pg_catalog.&gt;(character,character)"/>
+	</element>
+</opclass>
+
+<index name="idx_16896_dept_no" table="employees.dept_manager"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dept_no"/>
+			<opclass  signature="pg_catalog.bpchar_ops USING btree"/>
+		</idxelement>
+</index>
+
+<index name="idx_16889_dept_no" table="employees.dept_emp"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dept_no"/>
+			<opclass  signature="pg_catalog.bpchar_ops USING btree"/>
+		</idxelement>
+</index>
+
+<view name="dept_emp_latest_date" layers="0" collapse-mode="2" max-obj-count="1" z-value="0">
+	<schema name="public"/>
+	<role name="mauricio"/>
+	<position x="80" y="500"/>
+	<reference object="employees.dept_emp" type="table" ref-name="dept_emp" use-signature="true"/>
+	<simplecol name="emp_no" type="bigint"/>
+	<simplecol name="from_date" type="date"/>
+	<simplecol name="to_date" type="date"/>
+	<definition> <![CDATA[ SELECT emp_no,
+    max(from_date) AS from_date,
+    max(to_date) AS to_date
+   FROM dept_emp
+  GROUP BY emp_no;]]> </definition>
+</view>
+
+<relationship name="rel_dept_emp_latest_date_dept_emp" type="reltv" layers="0"
+	 custom-color="#df2f37"
+	 src-table="public.dept_emp_latest_date"
+	 dst-table="employees.dept_emp"
+	 src-required="false" dst-required="false"/>
+
+<view name="current_dept_emp" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="mauricio"/>
+	<position x="240" y="200"/>
+	<reference object="employees.dept_emp" type="table" ref-name="dept_emp" use-signature="true"/>
+	<reference object="public.dept_emp_latest_date" type="view" ref-name="dept_emp_latest_date" use-signature="true"/>
+	<simplecol name="emp_no" type="bigint"/>
+	<simplecol name="dept_no" type="character(4)"/>
+	<simplecol name="from_date" type="date"/>
+	<simplecol name="to_date" type="date"/>
+	<definition> <![CDATA[ SELECT l.emp_no,
+    d.dept_no,
+    l.from_date,
+    l.to_date
+   FROM (dept_emp d
+     JOIN dept_emp_latest_date l ON (((d.emp_no = l.emp_no) AND (d.from_date = l.from_date) AND (d.to_date = l.to_date))));]]> </definition>
+</view>
+
+<relationship name="rel_current_dept_emp_dept_emp" type="reltv" layers="0"
+	 custom-color="#e24118"
+	 src-table="public.current_dept_emp"
+	 dst-table="employees.dept_emp"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_current_dept_emp_dept_emp_latest_date" type="reltv" layers="0"
+	 custom-color="#34156a"
+	 src-table="public.current_dept_emp"
+	 dst-table="public.dept_emp_latest_date"
+	 src-required="false" dst-required="false"/>
+
+<constraint name="dept_emp_ibfk_1" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="CASCADE" ref-table="employees.employees" table="employees.dept_emp">
+	<columns names="emp_no" ref-type="src-columns"/>
+	<columns names="emp_no" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="dept_emp_ibfk_2" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="CASCADE" ref-table="employees.departments" table="employees.dept_emp">
+	<columns names="dept_no" ref-type="src-columns"/>
+	<columns names="dept_no" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="dept_manager_ibfk_1" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="CASCADE" ref-table="employees.employees" table="employees.dept_manager">
+	<columns names="emp_no" ref-type="src-columns"/>
+	<columns names="emp_no" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="dept_manager_ibfk_2" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="CASCADE" ref-table="employees.departments" table="employees.dept_manager">
+	<columns names="dept_no" ref-type="src-columns"/>
+	<columns names="dept_no" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="salaries_ibfk_1" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="CASCADE" ref-table="employees.employees" table="employees.salaries">
+	<columns names="emp_no" ref-type="src-columns"/>
+	<columns names="emp_no" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="titles_ibfk_1" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="CASCADE" ref-table="employees.employees" table="employees.titles">
+	<columns names="emp_no" ref-type="src-columns"/>
+	<columns names="emp_no" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_dept_emp_employees" type="relfk" layers="0"
+	 custom-color="#84d395"
+	 src-table="employees.dept_emp"
+	 dst-table="employees.employees" reference-fk="dept_emp_ibfk_1"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_dept_emp_departments" type="relfk" layers="0"
+	 custom-color="#dca19b"
+	 src-table="employees.dept_emp"
+	 dst-table="employees.departments" reference-fk="dept_emp_ibfk_2"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_dept_manager_employees" type="relfk" layers="0"
+	 custom-color="#545287"
+	 src-table="employees.dept_manager"
+	 dst-table="employees.employees" reference-fk="dept_manager_ibfk_1"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_dept_manager_departments" type="relfk" layers="0"
+	 custom-color="#7c68fb"
+	 src-table="employees.dept_manager"
+	 dst-table="employees.departments" reference-fk="dept_manager_ibfk_2"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_salaries_employees" type="relfk" layers="0"
+	 custom-color="#9a8c99"
+	 src-table="employees.salaries"
+	 dst-table="employees.employees" reference-fk="salaries_ibfk_1"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_titles_employees" type="relfk" layers="0"
+	 custom-color="#83518c"
+	 src-table="employees.titles"
+	 dst-table="employees.employees" reference-fk="titles_ibfk_1"
+	 src-required="false" dst-required="true"/>
+
+</dbmodel>

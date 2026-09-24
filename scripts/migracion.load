@@ -1,0 +1,20 @@
+LOAD DATABASE
+    FROM mysql://root:123@localhost:3306/employees
+    INTO postgresql://mauricio:mauricio123@localhost:5432/employees
+
+WITH include drop,
+    create tables,
+    create indexes,
+    reset sequences,
+    workers = 8,
+    concurrency = 2,
+    batch rows = 10000
+
+SET maintenance_work_mem to '256MB',
+    work_mem to '32MB'
+
+CAST
+    type datetime to timestamp drop default drop not null
+        using zero-dates-to-null,
+    type enum to text
+;
