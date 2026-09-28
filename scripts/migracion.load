@@ -1,6 +1,6 @@
 LOAD DATABASE
-    FROM mysql://root:123@localhost:3306/employees
-    INTO postgresql://mauricio:mauricio123@localhost:5432/employees
+    FROM mysql://root:passwordroot@localhost:3306/employees
+    INTO postgresql://user:password@localhost:5432/employees
 
 WITH include drop,
     create tables,
